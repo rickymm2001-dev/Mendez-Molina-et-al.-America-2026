@@ -159,12 +159,12 @@
     <div class="info-card">
       <div class="info-card-label">Metric</div>
       <div class="info-card-value">ASIR</div>
-      <div class="info-card-sub">Per 100,000 · both sexes</div>
+      <div class="info-card-sub">Per 100,000 inhabitants</div>
     </div>
     <div class="info-card">
       <div class="info-card-label">Data source</div>
       <div class="info-card-value">GBD 2023</div>
-      <div class="info-card-sub">GLMM · Neg. Binomial</div>
+      <div class="info-card-sub">Both sexes, age-standardized</div>
     </div>
   </div>
 
@@ -231,7 +231,7 @@
 
 <footer>
   <div class="footer-inner">
-    <span class="footer-text">Data: Global Burden of Disease Study 2023 (GBD 2023). Forecasting model: Hierarchical mixed-effects negative binomial model (GLMM) with SDI, high-temperature SEV, and high-BMI SEV as covariates. Uncertainty reported as 95% confidence intervals via parametric bootstrap (B=2000).</span>
+    <span class="footer-text">Data: Global Burden of Disease Study 2023 (GBD 2023).</span>
     <span class="footer-tag">AUA 2026</span>
   </div>
 </footer>
@@ -394,7 +394,7 @@ const chartDefaults = {
     }
   },
   scales:{
-    x:{ticks:{autoSkip:false,maxRotation:0,callback:(v,i)=>[2000,2005,2010,2015,2020,2025,2030,2035].includes(allYears[i])?allYears[i]:'',font:{size:11,family:"'DM Sans',sans-serif"},color:'#9b948d'},grid:{display:false},border:{color:'#e0dbd0'}},
+    x:{ticks:{autoSkip:false,maxRotation:0,maxTicksLimit:8,callback:(v,i)=>[2000,2005,2010,2015,2020,2025,2030,2035].includes(allYears[i])?allYears[i]:'',font:{size:11,family:"'DM Sans',sans-serif"},color:'#9b948d'},grid:{display:false},border:{color:'#e0dbd0'}},
     y:{title:{display:true,text:'ASIR (per 100,000)',font:{size:11,family:"'DM Sans',sans-serif"},color:'#9b948d'},ticks:{font:{size:11,family:"'DM Sans',sans-serif"},color:'#9b948d',callback:v=>v.toLocaleString()},grid:{color:'rgba(0,0,0,0.04)'},border:{display:false}}
   }
 };
